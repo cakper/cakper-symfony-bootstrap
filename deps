@@ -1,6 +1,6 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.3
+    version=v2.0.4
 
 [twig]
     git=http://github.com/fabpot/Twig.git
@@ -12,19 +12,19 @@
 
 [doctrine-common]
     git=http://github.com/doctrine/common.git
-    version=2.1.1
+    version=2.1.2
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=2.1.1
+    version=2.1.3
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=2.1.1
+    version=2.1.2
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
-    version=v4.1.1
+    version=v4.1.2
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
@@ -44,6 +44,7 @@
 [JMSSecurityExtraBundle]
     git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
     target=/bundles/JMS/SecurityExtraBundle
+    version=origin/1.0.x
 
 [SensioDistributionBundle]
     git=http://github.com/sensio/SensioDistributionBundle.git
@@ -56,11 +57,7 @@
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
-    version=v1.0.2
-
+    version=v1.0.1
+    
 [twitter-bootstrap]
     git=https://github.com/twitter/bootstrap.git
-
-[AopBundle]
-    git=https://github.com/schmittjoh/JMSAopBundle.git
-    target=/JMS/AopBundle

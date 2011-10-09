@@ -1,0 +1,3 @@
+[submodule "src/JMS/AopBundle"]
+	path = src/JMS/AopBundle
+	url = https://github.com/schmittjoh/JMSAopBundle.git

@@ -18,3 +18,20 @@ In example in Debianoids it would be:
 
     sudo usermod -a -G www-data username
 
+
+### Install Node.js, npm and less
+
+    wget http://nodejs.org/dist/node-v0.4.12.tar.gz
+    tar xvfz node-v0.4.12.tar.gz
+    cd node-v0.4.12
+    ./configure
+    make
+    sudo make install
+    cd ../
+    rm -rf node-v0.4.12
+    sudo curl http://npmjs.org/install.sh | sh
+    cd /usr/local/lib/node_modules
+    sudo npm install less
+    
+    
+    

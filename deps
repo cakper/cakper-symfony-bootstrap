@@ -1,6 +1,6 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.1
+    version=v2.0.3
 
 [twig]
     git=http://github.com/fabpot/Twig.git
@@ -28,7 +28,7 @@
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
-    version=v1.0.1
+    version=v1.0.2
 
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
@@ -56,4 +56,11 @@
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
-    version=v1.0.0
+    version=v1.0.2
+
+[twitter-bootstrap]
+    git=https://github.com/twitter/bootstrap.git
+
+[AopBundle]
+    git=https://github.com/schmittjoh/JMSAopBundle.git
+    target=/JMS/AopBundle

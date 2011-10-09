@@ -1,49 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" type="text/css" media="all" />
-        <title>{% block title %}Demo Bundle{% endblock %}</title>
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <div id="symfony-wrapper">
-            <div id="symfony-header">
-                <a href="{{ path('_welcome') }}">
-                    <img src="{{ asset('bundles/acmedemo/images/logo.gif') }}" alt="Symfony">
-                </a>
-                <form id="symfony-search" method="GET" action="http://symfony.com/search">
-                    <label for="symfony-search-field"><span>Search on Symfony Website</span></label>
-                    <input name="q" id="symfony-search-field" type="search" placeholder="Search on Symfony website" class="medium_txt">
-                    <input type="submit" class="symfony-button-grey" value="OK" />
-                </form>
-            </div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-            {% if app.session.flash('notice') %}
-                <div class="flash-message">
-                    <em>Notice</em>: {{ app.session.flash('notice') }}
-                </div>
-            {% endif %}
+    {% stylesheets filter='?yui_css' output='css/bootstrap.css'
+      '../vendor/twitter-bootstrap/bootstrap.css' %}
+      <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+    
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
 
-            {% block content_header %}
-                <ul id="menu">
-                    {% block content_header_more %}
-                        <li><a href="{{ path('_demo') }}">Demo Home</a></li>
-                    {% endblock %}
-                </ul>
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    {% javascripts 
+       'http://code.jquery.com/jquery-1.5.2.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-alerts.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-dropdown.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-modal.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-popover.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-scrollspy.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-tabs.js'
+       '../vendor/twitter-bootstrap/js/bootstrap-twipsy.js' 
+       filter='?yui_js' output='js/bootstrap.js' %}
+      <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 
-                <div style="clear: both"></div>
-            {% endblock %}
-
-            <div class="symfony-content">
-                {% block content %}
-                {% endblock %}
-            </div>
-
-            {% if code is defined %}
-                <h2>Code behind this page</h2>
-                <div class="symfony-content">{{ code|raw }}</div>
-            {% endif %}
+    <title>{% block title %}Demo Bundle{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+  </head>
+  <body>
+    
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Project name</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
-    </body>
+      </div>
+    </div>
+    
+
+      {% if app.session.flash('notice') %}
+      <div class="flash-message">
+        <em>Notice</em>: {{ app.session.flash('notice') }}
+      </div>
+      {% endif %}
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span6">
+          <h2>Heading</h2>
+          <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span5">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span5">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; Company 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
 </html>

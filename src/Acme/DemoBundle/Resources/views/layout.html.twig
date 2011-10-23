@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    {% stylesheets filter='?yui_css' output='css/bootstrap.css'
-      '../vendor/twitter-bootstrap/bootstrap.css' %}
+    {% stylesheets filter='less,?yui_css' output='css/bootstrap.css'
+      '../vendor/twitter-bootstrap/lib/bootstrap.less' %}
       <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
     {% endstylesheets %}
     
@@ -19,16 +19,15 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-    {% javascripts 
-       'http://code.jquery.com/jquery-1.5.2.js'
+    {% javascripts filter='?yui_js' output='js/bootstrap.js'
+       'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js'
        '../vendor/twitter-bootstrap/js/bootstrap-alerts.js'
        '../vendor/twitter-bootstrap/js/bootstrap-dropdown.js'
        '../vendor/twitter-bootstrap/js/bootstrap-modal.js'
        '../vendor/twitter-bootstrap/js/bootstrap-popover.js'
        '../vendor/twitter-bootstrap/js/bootstrap-scrollspy.js'
        '../vendor/twitter-bootstrap/js/bootstrap-tabs.js'
-       '../vendor/twitter-bootstrap/js/bootstrap-twipsy.js' 
-       filter='?yui_js' output='js/bootstrap.js' %}
+       '../vendor/twitter-bootstrap/js/bootstrap-twipsy.js' %}
       <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 

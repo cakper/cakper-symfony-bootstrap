@@ -7,6 +7,8 @@ This package basis on 2.0.4 version of this great framework and inclueds:
 
 * .htaccess fix for non-RewriteBase hosts
 * umask configuration for non-ACL filesystems
+* integrated Twitter-Bootstrap
+* YUI-Compressor jar file
 
 
 Installation
@@ -29,9 +31,6 @@ In example in Debianoids it would be:
     sudo make install
     cd ../
     rm -rf node-v0.4.12
-    sudo curl http://npmjs.org/install.sh | sh
+    sudo "curl http://npmjs.org/install.sh | sh"
     cd /usr/local/lib/node_modules
     sudo npm install less
-    
-    
-    
